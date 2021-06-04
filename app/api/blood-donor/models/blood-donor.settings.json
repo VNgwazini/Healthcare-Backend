@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blood_donors",
+  "info": {
+    "name": "Blood Donor"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 20
+    },
+    "lastName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 20
+    },
+    "email": {
+      "type": "email",
+      "maxLength": 30
+    },
+    "bloodBank": {
+      "model": "bloodbank"
+    },
+    "bloodGroup": {
+      "type": "string"
+    },
+    "previousPregnancies": {
+      "type": "enumeration",
+      "enum": [
+        "yes",
+        "no"
+      ],
+      "default": "no"
+    },
+    "previousTransfusions": {
+      "type": "enumeration",
+      "enum": [
+        "yes",
+        "no"
+      ],
+      "default": "no"
+    },
+    "previousReactions": {
+      "type": "enumeration",
+      "enum": [
+        "yes",
+        "no"
+      ],
+      "default": "no"
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "sex": {
+      "type": "enumeration",
+      "enum": [
+        "male",
+        "female"
+      ]
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "appointments",
+  "info": {
+    "name": "appointment"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "bloodbank": {
+      "model": "bloodbank"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "appointment",
+        "walkin"
+      ],
+      "required": true
+    },
+    "datetime": {
+      "type": "datetime"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "shipped",
+        "delivered",
+        "cancelled"
+      ]
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bloodbanks",
+  "info": {
+    "name": "Blood Bank"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "text",
+      "required": true,
+      "maxLength": 80
+    },
+    "streetAddress": {
+      "type": "string",
+      "maxLength": 25,
+      "required": true
+    },
+    "location": {
+      "type": "json"
+    },
+    "city": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
+    },
+    "phone": {
+      "type": "biginteger"
+    }
+  }
+}

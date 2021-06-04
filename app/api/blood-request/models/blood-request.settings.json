@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blood_requests",
+  "info": {
+    "name": "Blood Request"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "requestor": {
+      "model": "bloodbank"
+    },
+    "bloodGroup": {
+      "type": "string",
+      "required": true,
+      "maxLength": 3,
+      "minLength": 1
+    },
+    "units": {
+      "type": "integer",
+      "required": true,
+      "max": 500,
+      "min": 1
+    },
+    "supplier": {
+      "model": "bloodbank"
+    },
+    "deliveryMethod": {
+      "type": "enumeration",
+      "enum": [
+        "dispatch",
+        "drones",
+        "other"
+      ],
+      "required": false
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "requestType": {
+      "type": "enumeration",
+      "enum": [
+        "emergency",
+        "urgent",
+        "standard",
+        "group_supply"
+      ]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "shipped",
+        "delivered",
+        "canceled"
+      ],
+      "required": true,
+      "default": "pending"
+    },
+    "cancellationReason": {
+      "type": "enumeration",
+      "enum": [
+        "reason_1",
+        "reason_2",
+        "reason_3",
+        "reason_4",
+        "other",
+        "none"
+      ]
+    }
+  }
+}

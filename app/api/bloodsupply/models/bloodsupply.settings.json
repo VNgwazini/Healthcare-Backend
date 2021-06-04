@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bloodsupplies",
+  "info": {
+    "name": "Blood Unit"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "bloodDonor": {
+      "model": "blood-donor"
+    },
+    "bloodBank": {
+      "model": "bloodbank"
+    },
+    "expiration": {
+      "type": "datetime",
+      "required": true
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "usage": {
+      "type": "enumeration",
+      "enum": [
+        "unassigned",
+        "internal",
+        "external"
+      ],
+      "default": "unassigned"
+    },
+    "bloodRequest": {
+      "model": "blood-request"
+    }
+  }
+}

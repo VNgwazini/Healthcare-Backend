@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/bloodsupplies",
+      "handler": "bloodsupply.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bloodsupplies/count",
+      "handler": "bloodsupply.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bloodsupplies/:id",
+      "handler": "bloodsupply.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/bloodsupplies",
+      "handler": "bloodsupply.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/bloodsupplies/:id",
+      "handler": "bloodsupply.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/bloodsupplies/:id",
+      "handler": "bloodsupply.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
